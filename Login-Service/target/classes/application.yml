@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true  
+    
+  
+  
+  application:
+    name: login-service
+    
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_profile
+    username: root
+    password: saurav
+ 
+eureka:
+  client:
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/    

@@ -1,0 +1,5 @@
+server:
+  port: 8877
+  
+spring:  application:    name: config-server
+  cloud:    config:      server:        git:          uri: https://github.com/srvshrma/GencProject.git
