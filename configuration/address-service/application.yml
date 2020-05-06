@@ -1,5 +1,4 @@
-server:
-  port: 8989
+
 spring:
   jpa:
     hibernate:
@@ -8,9 +7,7 @@ spring:
     
   
   
-  application:
-    name: address-service
-    
+ 
   datasource:
     url: jdbc:mysql://localhost:3306/user_profile
     username: root
