@@ -1,6 +1,13 @@
 server:
-  port: 8877
+  port: 8888
   
-spring:  application:    name: config-server
-  cloud:    config:      server:        git:          uri: https://github.com/srvshrma/MyLoginApplication.git
-          search-paths:          - 'configuration/{application}'
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/srvshrma/MyLoginApplication.git
+          search-paths:
+          - 'configuration/{application}'
