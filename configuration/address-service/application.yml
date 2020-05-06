@@ -10,7 +10,7 @@ spring:
   
   application:
     name: address-service
-  cloud:    config:      uri:      - http://localhost:8877  
+    
   datasource:
     url: jdbc:mysql://localhost:3306/user_profile
     username: root
