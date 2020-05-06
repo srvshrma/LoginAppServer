@@ -4,5 +4,7 @@ server:
 spring:  
   application:
     name: address-service
-  cloud:    config:      uri: http://localhost:8877  
+  cloud:
+    config:
+      uri: http://localhost:8888  
  
