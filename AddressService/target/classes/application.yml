@@ -4,9 +4,5 @@ server:
 spring:  
   application:
     name: address-service
-<<<<<<< HEAD
   cloud:    config:      uri: http://localhost:8888 
-=======
-  cloud:    config:      uri: http://localhost:8877  
->>>>>>> cc46c1460cbd185d1f3cbd9551f5f9f9b94cd5e6
- 
+management:  endpoints:    web:      exposure:        include:        - '*' 
