@@ -2,8 +2,16 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/user_profile
     username: root
-    password: root 
+    password: saurav 
   jpa:
     hibernate:
       ddl-auto: update
     generate-ddl: true 
+logging:
+  pattern:
+    console: "%d{dd-MM-YYYY HH:mm:ss} - %msg%n"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh    
