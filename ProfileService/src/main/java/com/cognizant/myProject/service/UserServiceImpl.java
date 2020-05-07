@@ -1,5 +1,6 @@
 package com.cognizant.myProject.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,27 @@ public class UserServiceImpl implements UserService {
 	public Iterable<User> getAllUsers() throws ProfileNotFoundException{
 		// TODO Auto-generated method stub
 		return userR.findAll();
+	}
+
+
+	@Override
+	public List<User> getByName(String name) {
+		// TODO Auto-generated method stub
+		return userR.findByName(name);
+	}
+
+
+	@Override
+	public void updateProfileById(User user) {
+		// TODO Auto-generated method stub
+		userR.save(user);
+	}
+
+
+	@Override
+	public void deleteProfileById(int id) {
+		// TODO Auto-generated method stub
+		userR.deleteById(id);
 	}
 
 }

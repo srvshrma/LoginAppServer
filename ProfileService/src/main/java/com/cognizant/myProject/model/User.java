@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 
 @Entity
-@AllArgsConstructor
+
 public class User {
 	@Id
 	private int id;
@@ -22,6 +22,8 @@ public class User {
 	
 	private int age;
 	private String gender;
+	private String email;
+	
 	public int getAge() {
 		return age;
 	}
@@ -38,7 +40,7 @@ public class User {
 		this.gender = gender;
 	}
 
-	private String email;
+	
 	
 
 	public int getId() {
@@ -65,6 +67,16 @@ public class User {
 		return email;
 	}
 	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public User(int id, String firstName, String lastName, int age, String gender, String email) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.gender = gender;
 		this.email = email;
 	}
 

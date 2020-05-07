@@ -1,13 +1,16 @@
 package com.cognizant.myProject.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,9 +48,23 @@ public class UserController {
 		
 		return userService.getAllUsers();
 	}
+	@GetMapping("/user/name/{name}")
+	public List<User> getByName(@PathVariable String name){
+		
+		return userService.getByName(name);
+	}
+	@PutMapping("/updateuser/{id}")
+	public void updateById(@RequestBody User user,@PathVariable int id) {
+		User update = new User(id, user.getFirstName(),user.getLastName(), user.getAge(),user.getGender(), user.getEmail());
+		userService.updateProfileById(update);
+	}
+	@DeleteMapping("/deleteuser/{id}")
+	public void deleteById(@PathVariable int id) {
+		userService.deleteProfileById(id);
+	}
 	
-	@RequestMapping("/address/create")
-	public Address createAddress(Address address) {
+	@PostMapping("/address/create")
+	public Address createAddress(@RequestBody Address address) {
 		return feign.createAddress(address);
 	}
 	
