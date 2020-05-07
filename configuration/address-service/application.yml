@@ -7,9 +7,7 @@ spring:
     hibernate:
       ddl-auto: update
     generate-ddl: true 
-logging:
-  pattern:
-    console: "%d{dd-MM-YYYY HH:mm:ss} - %msg%n"
+
 management:
   endpoints:
     web:
