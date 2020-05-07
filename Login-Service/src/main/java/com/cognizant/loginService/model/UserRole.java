@@ -1,9 +1,12 @@
 package com.cognizant.loginService.model;
 
-import java.util.ArrayList;
 
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 
@@ -13,7 +16,12 @@ public class UserRole {
 	@Id
 	private int user_id;
 	
-	private ArrayList<UserRole> role;
+	private String role;
+	
+	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+			 CascadeType.DETACH, CascadeType.REFRESH})
+@JoinColumn(name="login_user_id")
+private Login login;
 	public int getUser_id() {
 		return user_id;
 	}
@@ -24,12 +32,12 @@ public class UserRole {
 	}
 
 	
-	public ArrayList<UserRole> getRole() {
+	public String getRole() {
 		return role;
 	}
 
 
-	public void setRole(ArrayList<UserRole> role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
 

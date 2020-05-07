@@ -1,0 +1,21 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8762
+spring:
+  application:
+    name: zuul-server
+zuul:
+  ignored-services: '*'
+  routes:
+    address-service:
+      path: /address/**
+      service-id: address-service
+    login-service:
+      path: /login/**
+      service-id: login-service
+    user-service:
+      path: /profile/**
+      service-id: user-service              
