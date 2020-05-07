@@ -8,8 +8,3 @@ spring:
       ddl-auto: update
     generate-ddl: true 
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh    
