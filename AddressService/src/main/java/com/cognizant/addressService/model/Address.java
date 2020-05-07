@@ -12,8 +12,9 @@ public class Address {
 	private String permanentAddress;
 	@Column(name = "pre_add")
 	private String presentAddress;
-	public Address(String permanentAddress, String presentAddress) {
+	public Address(int user_id,String permanentAddress, String presentAddress) {
 		super();
+		this.user_id=user_id;
 		this.permanentAddress = permanentAddress;
 		this.presentAddress = presentAddress;
 	}
@@ -31,6 +32,12 @@ public class Address {
 	}
 	public void setPresentAddress(String presentAddress) {
 		this.presentAddress = presentAddress;
+	}
+	public int getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 	
 	

@@ -8,5 +8,5 @@ spring:
       server:
         git:
           uri: https://github.com/srvshrma/MyLoginApplication.git
-          search-paths:
-          - 'configuration-files/{application}'
+          search-paths: 'configuration/{application}'
+         
