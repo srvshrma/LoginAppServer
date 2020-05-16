@@ -7,6 +7,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/srvshrma/MyLoginApplication.git
+          uri: https://github.com/srvshrma/LoginAppServer.git
           search-paths: 'configuration/{application}'
          
